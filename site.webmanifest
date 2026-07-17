@@ -1,0 +1,12 @@
+{
+  "name": "Christian Hillman — Digital Marketing & Web",
+  "short_name": "C. Hillman",
+  "description": "Digital marketing and web professional based in Minneapolis.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ff5b2e",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
