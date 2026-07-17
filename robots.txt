@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://christian-hillman.vercel.app/sitemap.xml
+Sitemap: https://christianrhillman.com/sitemap.xml
