@@ -57,40 +57,81 @@
     });
   });
 
-  /* Contact form — progressive enhancement.
-     If no real form backend (data-endpoint) is configured, fall back to a
-     pre-filled mailto so the button always does something useful. */
+  /* Contact form.
+     - With a real Web3Forms access key (input[name="access_key"]), submit via
+       AJAX so the visitor stays on the page, then fire a best-effort Telegram
+       alert to /api/telegram-notify.
+     - Without a key set yet, fall back to a pre-filled mailto so the button
+       always does something useful. */
   var form = document.querySelector('form[data-contact]');
   if (form) {
     var status = form.querySelector('.form-status');
-    form.addEventListener('submit', function (e) {
-      var endpoint = form.getAttribute('data-endpoint');
-      if (endpoint) return; // let a configured backend handle the POST
+    var submitBtn = form.querySelector('[type="submit"]');
+    var keyInput = form.querySelector('input[name="access_key"]');
+    var accessKey = keyInput ? keyInput.value.trim() : '';
+    var hasKey = accessKey && accessKey.indexOf('YOUR_') !== 0;
 
+    function setStatus(msg, ok) {
+      if (!status) return;
+      status.textContent = msg;
+      status.classList.add('show');
+      status.classList.toggle('ok', !!ok);
+      status.classList.toggle('err', !ok);
+    }
+
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
       var data = new FormData(form);
       var name = (data.get('name') || '').toString().trim();
       var email = (data.get('email') || '').toString().trim();
       var company = (data.get('company') || '').toString().trim();
+      var interest = (data.get('interest') || '').toString().trim();
       var message = (data.get('message') || '').toString().trim();
 
-      var subject = 'Website enquiry' + (name ? ' from ' + name : '');
-      var bodyLines = [
-        'Name: ' + name,
-        'Email: ' + email,
-        'Company: ' + company,
-        '',
-        message
-      ];
-      var href = 'mailto:Christian@wearelaunchmedia.com'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(bodyLines.join('\n'));
-      window.location.href = href;
-
-      if (status) {
-        status.textContent = 'Opening your email app to send this message…';
-        status.classList.add('show', 'ok');
+      // ---- Fallback: no backend configured yet -> mailto ----
+      if (!hasKey) {
+        var body = ['Name: ' + name, 'Email: ' + email, 'Company: ' + company,
+                    'Interest: ' + interest, '', message].join('\n');
+        window.location.href = 'mailto:christian@christianrhillman.com'
+          + '?subject=' + encodeURIComponent('Website enquiry' + (name ? ' from ' + name : ''))
+          + '&body=' + encodeURIComponent(body);
+        setStatus('Opening your email app to send this message…', true);
+        return;
       }
+
+      // ---- Web3Forms AJAX submit ----
+      if (submitBtn) submitBtn.disabled = true;
+      setStatus('Sending…', true);
+
+      var payload = {};
+      data.forEach(function (v, k) { payload[k] = v; });
+      payload.subject = 'New enquiry from ' + (name || 'the website');
+      payload.from_name = 'christianrhillman.com';
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (res) {
+          if (res && res.success) {
+            setStatus("Thanks — your message has been sent. I'll be in touch shortly.", true);
+            form.reset();
+            // Best-effort Telegram alert (silently does nothing until configured).
+            fetch('/api/telegram-notify', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name: name, email: email, company: company, interest: interest, message: message })
+            }).catch(function () {});
+          } else {
+            setStatus('Something went wrong. Please email christian@christianrhillman.com directly.', false);
+          }
+        })
+        .catch(function () {
+          setStatus('Network error. Please email christian@christianrhillman.com directly.', false);
+        })
+        .then(function () { if (submitBtn) submitBtn.disabled = false; });
     });
   }
 
