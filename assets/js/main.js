@@ -92,7 +92,7 @@
       if (!hasKey) {
         var body = ['Name: ' + name, 'Email: ' + email, 'Company: ' + company,
                     'Interest: ' + interest, '', message].join('\n');
-        window.location.href = 'mailto:christian@christianrhillman.com'
+        window.location.href = 'mailto:chris@christianrhillman.com'
           + '?subject=' + encodeURIComponent('Website enquiry' + (name ? ' from ' + name : ''))
           + '&body=' + encodeURIComponent(body);
         setStatus('Opening your email app to send this message…', true);
@@ -125,11 +125,11 @@
               body: JSON.stringify({ name: name, email: email, company: company, interest: interest, message: message })
             }).catch(function () {});
           } else {
-            setStatus('Something went wrong. Please email christian@christianrhillman.com directly.', false);
+            setStatus('Something went wrong. Please email chris@christianrhillman.com directly.', false);
           }
         })
         .catch(function () {
-          setStatus('Network error. Please email christian@christianrhillman.com directly.', false);
+          setStatus('Network error. Please email chris@christianrhillman.com directly.', false);
         })
         .then(function () { if (submitBtn) submitBtn.disabled = false; });
     });
