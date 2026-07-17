@@ -3,18 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Christian Hillman — Digital Marketing &amp; Web in Minneapolis</title>
-  <meta name="description" content="Christian Hillman is a Minneapolis-based digital marketing and web professional. Websites and AI marketing with Oxsome, programmatic advertising with Launch Media, plus SEO, paid search, and social." />
-  <link rel="canonical" href="https://christianrhillman.com/" />
+  <title>Christian Hillman | Minneapolis Digital Marketing &amp; Web Design</title>
+  <meta name="description" content="Christian Hillman is a Minneapolis digital marketing and web professional specializing in web design, SEO, AI marketing automation, programmatic advertising and paid media." />
+  <link rel="canonical" href="https://www.christianrhillman.com/" />
   <meta name="theme-color" content="#ffffff" />
 
+  <!-- Google Search Console: when you have your verification code, paste the tag here, e.g.
+       <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> -->
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://christianrhillman.com/" />
-  <meta property="og:title" content="Christian Hillman — Digital Marketing &amp; Web" />
-  <meta property="og:description" content="Websites, AI marketing, programmatic ads, SEO and paid media for growing businesses. Based in Minneapolis." />
+  <meta property="og:url" content="https://www.christianrhillman.com/" />
+  <meta property="og:title" content="Christian Hillman | Minneapolis Digital Marketing &amp; Web Design" />
+  <meta property="og:description" content="Web design, SEO, AI marketing automation and paid media experience based in Minneapolis." />
+  <meta property="og:image" content="https://www.christianrhillman.com/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Christian Hillman — Minneapolis digital marketing and web design" />
+
+  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Christian Hillman — Digital Marketing &amp; Web" />
-  <meta name="twitter:description" content="Websites, AI marketing, programmatic ads, SEO and paid media for growing businesses." />
+  <meta name="twitter:title" content="Christian Hillman | Minneapolis Digital Marketing &amp; Web Design" />
+  <meta name="twitter:description" content="Web design, SEO, AI marketing automation and paid media experience based in Minneapolis." />
+  <meta name="twitter:image" content="https://www.christianrhillman.com/assets/og-image.png" />
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="manifest" href="/site.webmanifest" />
@@ -24,20 +35,37 @@
   <link rel="stylesheet" href="/assets/css/style.css" />
   <script>document.documentElement.classList.add('js');</script>
 
+  <!-- Structured data: ProfilePage + Person -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Christian Hillman",
-    "jobTitle": "Digital Marketing & Web Professional",
-    "email": "mailto:Christian@wearelaunchmedia.com",
-    "url": "https://christianrhillman.com/",
-    "address": { "@type": "PostalAddress", "addressLocality": "Minneapolis", "addressRegion": "MN", "addressCountry": "US" },
-    "worksFor": [
-      { "@type": "Organization", "name": "Oxsome", "url": "https://oxsome.com" },
-      { "@type": "Organization", "name": "Launch Media", "url": "https://wearelaunchmedia.com" }
-    ],
-    "knowsAbout": ["Web Design", "AI Marketing", "SEO", "Programmatic Advertising", "Paid Search", "Social Media Marketing"]
+    "@type": "ProfilePage",
+    "dateModified": "2026-07-17",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Christian Hillman",
+      "jobTitle": "Digital Marketing and Web Professional",
+      "url": "https://www.christianrhillman.com/",
+      "email": "Christian@wearelaunchmedia.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Minneapolis–St. Paul",
+        "addressRegion": "MN",
+        "addressCountry": "US"
+      },
+      "worksFor": [
+        { "@type": "Organization", "name": "Oxsome", "url": "https://oxsome.com" },
+        { "@type": "Organization", "name": "Launch Media", "url": "https://wearelaunchmedia.com" }
+      ],
+      "knowsAbout": [
+        "Web Design",
+        "Search Engine Optimization",
+        "AI Marketing Automation",
+        "Programmatic Advertising",
+        "Google Ads",
+        "Paid Media"
+      ]
+    }
   }
   </script>
 </head>
@@ -71,18 +99,18 @@
       <div class="container hero__grid">
         <div class="hero__copy">
           <p class="eyebrow reveal">Digital Marketing &amp; Web · Minneapolis</p>
-          <h1 class="hero__title reveal d1">Websites and marketing that <span class="u">grow the business</span>.</h1>
+          <h1 class="hero__title reveal d1">Digital Marketing, Web Design and <span class="u">SEO in Minneapolis</span></h1>
           <p class="lead hero__sub reveal d2">
-            I'm Christian Hillman. I help small and mid-sized businesses win online — building
-            high-performing websites and AI-driven marketing with <strong>Oxsome</strong>, and running
-            data-driven ad campaigns with <strong>Launch Media</strong>.
+            I'm Christian Hillman. I help small and mid-sized businesses build better websites,
+            improve their search visibility and reach more customers through digital advertising
+            and AI-powered marketing.
           </p>
           <div class="hero__cta reveal d2">
-            <a class="btn btn--primary btn--lg" href="/contact.html">
-              Start a project
+            <a class="btn btn--primary btn--lg" href="#work" data-analytics="view_work">
+              View My Work
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn btn--ghost btn--lg" href="/services.html">Explore services</a>
+            <a class="btn btn--ghost btn--lg" href="/contact.html" data-analytics="start_conversation">Start a Conversation</a>
           </div>
           <dl class="hero__meta reveal d3">
             <div><dt>8+</dt><dd>Years in digital</dd></div>
@@ -251,11 +279,11 @@
       <div class="container">
         <div class="cta reveal">
           <p class="eyebrow center" style="justify-content:center">Let's talk</p>
-          <h2 class="h-lg">Ready to grow your business online?</h2>
-          <p class="lead mx-auto measure" style="margin-top:1rem">Whether you need a new website, better search rankings, or ads that actually perform — let's map out the plan.</p>
+          <h2 class="h-lg">Let's find your best next step</h2>
+          <p class="lead mx-auto measure" style="margin-top:1rem">Need a stronger website, better search visibility or a smarter advertising strategy? Tell me what you are working on and I'll help identify the best next step.</p>
           <div class="btn-row">
-            <a class="btn btn--primary btn--lg" href="/contact.html">Start a project</a>
-            <a class="btn btn--onink-ghost btn--lg" href="mailto:Christian@wearelaunchmedia.com">Email me directly</a>
+            <a class="btn btn--primary btn--lg" href="/contact.html" data-analytics="contact_click">Contact Christian</a>
+            <a class="btn btn--onink-ghost btn--lg" href="mailto:Christian@wearelaunchmedia.com" data-analytics="email_click">Email me directly</a>
           </div>
         </div>
       </div>
@@ -314,6 +342,7 @@
     </div>
   </footer>
 
+  <script defer src="/assets/js/analytics.js"></script>
   <script src="/assets/js/main.js"></script>
 </body>
 </html>
