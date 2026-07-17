@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://christianrhillman.com/sitemap.xml
+Sitemap: https://www.christianrhillman.com/sitemap.xml
