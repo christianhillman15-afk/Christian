@@ -1,5 +1,9 @@
 # Christian Hillman — Personal Website
 
+> **Forwarded (29 Sep 2026):** every URL on christianrhillman.com now permanently redirects to
+> https://christiansstudios.com (the `redirects` in `vercel.json`). The live site is Christian's
+> Cloudflare Pages project `christiansstudios`. Remove those redirects to serve this repo again.
+
 A professional multi-page website for Christian Hillman: digital marketing and web professional
 working with [Oxsome](https://oxsome.com) (web design & AI marketing) and
 [Launch Media](https://wearelaunchmedia.com) (programmatic advertising).

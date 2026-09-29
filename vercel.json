@@ -44,32 +44,42 @@
   "redirects": [
     {
       "source": "/about.html",
-      "destination": "/#christian",
+      "destination": "https://christiansstudios.com/#about",
       "permanent": true
     },
     {
       "source": "/about",
-      "destination": "/#christian",
+      "destination": "https://christiansstudios.com/#about",
       "permanent": true
     },
     {
       "source": "/services.html",
-      "destination": "/#services",
+      "destination": "https://christiansstudios.com/#services",
       "permanent": true
     },
     {
       "source": "/services",
-      "destination": "/#services",
+      "destination": "https://christiansstudios.com/#services",
       "permanent": true
     },
     {
       "source": "/contact.html",
-      "destination": "/#contact",
+      "destination": "https://christiansstudios.com/#contact",
       "permanent": true
     },
     {
       "source": "/contact",
-      "destination": "/#contact",
+      "destination": "https://christiansstudios.com/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "destination": "https://christiansstudios.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://christiansstudios.com/:path*",
       "permanent": true
     }
   ]
