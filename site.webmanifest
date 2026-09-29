@@ -1,12 +1,22 @@
 {
-  "name": "Christian Hillman — Digital Marketing & Web",
-  "short_name": "C. Hillman",
-  "description": "Digital marketing and web professional based in Minneapolis.",
+  "name": "Christian Hillman",
+  "short_name": "Christian",
+  "description": "CTV, Google Ads, web design and SEO. Minnesota, building with Launch Media.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ff5b2e",
+  "background_color": "#f7f8fa",
+  "theme_color": "#f7f8fa",
   "icons": [
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
   ]
 }
